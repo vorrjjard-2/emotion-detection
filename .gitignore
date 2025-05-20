@@ -59,7 +59,6 @@ coverage.xml
 *.hdf5
 *.sqlite
 *.db
-data/
 datasets/
 raw_data/
 
@@ -71,9 +70,6 @@ raw_data/
 *.pth
 *.weights
 *.onnx
-models/
-saved_models/
-checkpoints/
 output/
 results/
 wandb/
@@ -110,3 +106,6 @@ logs/
 ehthumbs.db
 Thumbs.db
 
+# Allow data and models folders but exclude specific file types inside them
+data/**/*.csv
+models/**/*.csv
