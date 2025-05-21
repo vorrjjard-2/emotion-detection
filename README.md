@@ -3,7 +3,7 @@ Project Status : **Archived**
 
 A convolutional neural network (CNN) built with `pytorch` to classify emotional states in still images. Also connects with webcams using `opencv` to classify emotions in real time.
 
-Insert DEMO : 
+Demo : https://github.com/user-attachments/assets/524ad48a-dac0-4c5b-ac84-cb334d34d539
 
 ___
 ### Project Structure
