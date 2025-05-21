@@ -7,11 +7,6 @@ from torch.utils.data import DataLoader
 # NumPy for data handling
 import numpy as np
 
-# Image handling
-from PIL import Image
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
-
 # Visualization
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -36,7 +31,10 @@ def line_graph(data_tensors, labels=None, title=None, xlabel="Epochs", ylabel="V
     plt.figure(figsize=(10, 6))
     
     for i, data in enumerate(data_tensors):
-        plt.plot(data.cpu().numpy(), label=labels[i], color=colors[i], lw=2)
+        if isinstance(data, torch.Tensor):
+            data = data.detach().cpu().numpy()  # safer with .detach()
+        plt.plot(data, label=labels[i], color=colors[i], lw=2)
+    
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
